@@ -8,9 +8,10 @@ const RootStore = types.model("Root",{
 .actions(self => {
     return {
         addSite: (site) => {
-            site.status = "None"
-            site.id = uuidv4()
-            console.log(site)
+            site.settings.status = "None";
+            site.settings.timestamp = 0;
+            site.id = uuidv4();
+            console.log(site);
             self.sites.push(site)
         }
 }})

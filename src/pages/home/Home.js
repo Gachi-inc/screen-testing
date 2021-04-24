@@ -8,7 +8,7 @@ import "./index.css"
 import socket from '../../core/socketio';
 import {observer, inject} from "mobx-react"
 
-socket.on("connected", (arg) => {
+socket.on("connect", (arg) => {
   console.log(arg); // yor computer is virused
 });
 
@@ -32,6 +32,7 @@ class Home extends React.Component {
 
   render(){
     const {rootStore} = this.props
+    const {id} = this.state
     if (this.props.location.pathname !== '/') {
       return null;
     }
@@ -40,7 +41,7 @@ class Home extends React.Component {
       <div className = "HomePage">
         <LeftSidePanel rootStore = {rootStore} setCurrentId = {this.setId}/>
         <div className = "Information">
-          <SettingsPanel rootStore = {rootStore} id = {this.state.id}/>
+          <SettingsPanel site = {rootStore.sites.find(site => site.id === id)}/>
           <InfoPanel rootStore = {rootStore} id = {this.state.id}/>
         </div>
       </div>

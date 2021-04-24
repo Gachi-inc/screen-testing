@@ -1,14 +1,15 @@
 import React from 'react';
 import {Modal, Form, Input, InputNumber,} from 'antd';
+import {observer} from "mobx-react"
 import DataUrls from '../../../DataUrls.json'
 import addSiteToList from "../../core/axios.js"
-function ModalInput({visible, onClose}) { 
+function ModalInput({visible, onClose, rootStore}) { 
     const [form] = Form.useForm();
     const onCreate = (values) => {
       console.log('Received values of form: ', values);
-      addSiteToList(values);
-      onClose()
+      // addSiteToList(values);
       rootStore.addSite(values) 
+      onClose()
     };
     return (
         <Modal 
@@ -51,4 +52,4 @@ function ModalInput({visible, onClose}) {
         </Modal>
     );
 }
-export default ModalInput;
+export default observer(ModalInput);

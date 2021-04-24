@@ -9,22 +9,28 @@ class SettingsPanel extends Component {
     }
 
     startTesting = async() => {
-        const res = await axios.post("http://192.168.1.202:65432", "https://urfu.ru/ru/")
+        const res = await axios.post("http://192.168.1.7:6543/api/screenshots", {url:"https://urfu.ru/ru/"})
         console.log(res)
     }   
 
     render() { 
+        console.log(site)
+        const {site} = this.props
         return ( 
             <div className ='SettingsPanel'>
-                <Descriptions
-                title="Настройки тестинга"
-                >
-                <Descriptions.Item label="Название сайта">SiteName</Descriptions.Item>
-                <Descriptions.Item label="Таймаут проверки">24 часа</Descriptions.Item>
-                <Descriptions.Item label="Статус">Prepaid</Descriptions.Item>
-                <Descriptions.Item label="Время с прошлой проверки">18:00:00</Descriptions.Item>
-                </Descriptions>
-                <Button onClick = {this.startTesting}>Запустить проверку</Button>
+                {site? 
+                    <React.Fragment>
+                        <Descriptions
+                        title="Настройки тестинга"
+                        >
+                        <Descriptions.Item label="Название сайта">{site.title}</Descriptions.Item>
+                        <Descriptions.Item label="Таймаут проверки">{site.settings.timeOut}</Descriptions.Item>
+                        <Descriptions.Item label="Статус">{site.settings.status}</Descriptions.Item>
+                        <Descriptions.Item label="Время с прошлой проверки">{site.settings.timestamp}</Descriptions.Item>
+                        </Descriptions>
+                        <Button onClick = {this.startTesting}>Запустить проверку</Button>
+                    </React.Fragment> 
+                : <div>Загрузка...</div>}
             </div>
          );
     }

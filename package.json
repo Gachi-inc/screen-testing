@@ -46,7 +46,7 @@
     ]
   },
   "scripts": {
-    "start": "webpack-dev-server --host 127.0.0.1 --port 8080 --mode=development --display-error-details",
+    "start": "webpack-dev-server --host 192.168.1.111 --port 8080 --mode=development --display-error-details",
     "clean-build": "shx rm -rf build",
     "build": "yarn clean-build && webpack -p --mode=production",
     "build-serve": "yarn build && serve"
