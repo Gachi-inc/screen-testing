@@ -27,18 +27,16 @@ export default class MainLayout extends React.Component {
             </Menu.Item>
           </Menu>
         </Header>
-        <Layout>
-          {children}
-          <Footer>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/Gachi-inc/screen-testing-client"
-            >
-              GitHub
-            </a>
-          </Footer>
-        </Layout>
+        {children}
+        <Footer>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/Gachi-inc/screen-testing-client"
+          >
+            GitHub
+          </a>
+        </Footer>
       </Layout>
     );
   }

@@ -19,14 +19,13 @@ function LeftSidePanel(props) {
 
 
       return (
-        <div style={{ position: 'relative' }}>
           <List
             header={<div>Имя</div>}
             footer={<Button type="primary" style={{ marginBottom: 16 }}>
                 Добавить сайт
               </Button>
               }
-            style = {{width: "30%", height: "100%", align: 'center',}}
+            style = {{width: "30%", align: 'center', boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}
             bordered
             dataSource={DataUrls}
             renderItem={item => (
@@ -35,7 +34,6 @@ function LeftSidePanel(props) {
               </List.Item>
             )}
           />
-        </div>
       );
   }
   export default LeftSidePanel;
