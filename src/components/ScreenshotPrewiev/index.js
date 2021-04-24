@@ -13,8 +13,9 @@ class ScreenshotPreview extends Component {
     render() { 
         return (
         <div className = "Screenshot">
-           <iframe name="X-Frame-Options" value="SAMEORIGIN" width="100%" height="100%" src="https://www.sberbank.ru/ru/person">
-        </iframe>
+            <h1>Превью сайта</h1>
+           <img width="80%" height="80%" src="https://img.flaticon.com/icons/png/512/58/58672.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF">
+        </img>
         </div>  
         );
     }
