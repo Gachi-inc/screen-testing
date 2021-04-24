@@ -36,18 +36,6 @@
       ]
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx}": [
-      "pretty-quick --staged",
-      "eslint",
-      "git add"
-    ]
-  },
   "scripts": {
     "start": "webpack-dev-server --port 8080 --mode=development --display-error-details",
     "clean-build": "shx rm -rf build",
@@ -88,10 +76,8 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.7",
     "html-webpack-plugin": "^4.3.0",
-    "husky": "^4.2.5",
     "less": "^3.11.3",
     "less-loader": "^6.2.0",
-    "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "serve": "^11.3.2",

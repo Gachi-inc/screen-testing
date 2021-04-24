@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PageLayout from '../../layout/PageLayout';
+import LeftSidePanel from '../../components/LeftSidePanel';
 
 const Home = ({ location: { pathname } }) => {
   if (pathname !== '/') {
@@ -8,7 +9,7 @@ const Home = ({ location: { pathname } }) => {
   }
   return (
     <PageLayout title="Home">
-      <h3>Home page</h3>
+      <LeftSidePanel/>
     </PageLayout>
   );
 };
