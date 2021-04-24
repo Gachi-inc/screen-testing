@@ -13,27 +13,28 @@ function LeftSidePanel(props) {
     setUrls(getList);
   });
   socket.emit("List2", "ready2");
-    return (
-      <div className ='LeftSidePanel'>
-        <List
-          header={<div>Имя</div>}
-          footer={
-            <Button type="dashed"
-            style={{ width: '100%' }}
-            onClick={() => setVisible(true)}
-            >Добавить <PlusCircleOutlined/></Button>
-          }
-          style = {{height:"100%",align: 'center', boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}
-          bordered
-          dataSource={Urls}
-          renderItem={item => (
-            <List.Item key={item.name}>
-              <Space> {item.name} </Space> <Space> {item.url} </Space>
-            </List.Item>
-          )}
-        />
-        <ModalInput visible={visible} onClose={() => {setVisible(false);}}/>
-      </div>
-    );
+    console.log(props)
+      return (
+        <div className ='LeftSidePanel'>
+          <List
+            header={<div>Имя</div>}
+            footer={
+              <Button type="dashed"
+              style={{ width: '100%' }}
+              onClick={() => setVisible(true)}
+              >Добавить <PlusCircleOutlined/></Button>
+            }
+            style = {{height:"100%",align: 'center', boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}
+            bordered
+            dataSource={props.rootStore.sites}
+            renderItem={item => (
+              <List.Item key={item.title}>
+               <Space> {item.title} </Space> <Space> {item.url} </Space>
+              </List.Item>
+            )}
+          />
+          <ModalInput visible={visible} onClose={() => {setVisible(false)}} rootStore = {props.rootStore}/>
+        </div>
+      );
   }
   export default LeftSidePanel;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Modal, Form, Input,} from 'antd';
+import {Modal, Form, Input, InputNumber,} from 'antd';
 import DataUrls from '../../../DataUrls.json'
 import addSiteToList from "../../core/axios.js"
 function ModalInput({visible, onClose}) { 
@@ -8,6 +8,7 @@ function ModalInput({visible, onClose}) {
       console.log('Received values of form: ', values);
       addSiteToList(values);
       onClose()
+      rootStore.addSite(values) 
     };
     return (
         <Modal 
@@ -36,18 +37,16 @@ function ModalInput({visible, onClose}) {
             <Form
             form={form}
             layout="vertical"
-            name="form_in_modal"
-            initialValues={{
-                modifier: 'public',
-            }}
-            
             >
-            <Form.Item name="Имя">
-              <Input placeholder="Имя"/>
-            </Form.Item>
-            <Form.Item name="URL">
-              <Input placeholder="URL"/>
-            </Form.Item>
+              <Form.Item name="title">
+                <Input placeholder="Имя"/>
+              </Form.Item>
+              <Form.Item name="url">
+                <Input placeholder="URL"/>
+              </Form.Item>
+              <Form.Item name={['settings', 'timeOut']}>
+                <InputNumber placeholder="Время переодического тестирования"/>
+              </Form.Item>
             </Form>
         </Modal>
     );

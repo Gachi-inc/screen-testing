@@ -6,26 +6,47 @@ import LeftSidePanel from '../../components/LeftSidePanel';
 import InfoPanel from '../../components/InfoPanel';
 import "./index.css"
 import socket from '../../core/socketio';
+import {observer, inject} from "mobx-react"
 
 socket.on("connected", (arg) => {
   console.log(arg); // yor computer is virused
 });
 
-const Home = ({ location: { pathname } }) => {
-  if (pathname !== '/') {
-    return null;
+
+// import { io } from "socket.io-client";
+// const socket = io("http://server-domain.com");
+@inject("rootStore")
+@observer
+class Home extends React.Component {
+  
+  constructor(props){
+    super(props)
+    this.state = {
+      id: null
+    }
+  } 
+
+  setId = (id) => {
+    this.setState({id})
   }
-  return (
-  <PageLayout title = "Home">
-    <div className = "HomePage">
-      <LeftSidePanel/>
-      <div className = "Information">
-        <SettingsPanel/>
-        <InfoPanel/>
+
+  render(){
+    const {rootStore} = this.props
+    if (this.props.location.pathname !== '/') {
+      return null;
+    }
+    return (
+    <PageLayout title = "Home">
+      <div className = "HomePage">
+        <LeftSidePanel rootStore = {rootStore} setCurrentId = {this.setId}/>
+        <div className = "Information">
+          <SettingsPanel rootStore = {rootStore} id = {this.state.id}/>
+          <InfoPanel rootStore = {rootStore} id = {this.state.id}/>
+        </div>
       </div>
-    </div>
-  </PageLayout>
-  )
+    </PageLayout>
+    )
+  }
 }
 Home.propTypes = {
   location: PropTypes.object.isRequired,
