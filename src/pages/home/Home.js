@@ -5,6 +5,8 @@ import SettingsPanel from '../../components/SettingsPanel';
 import LeftSidePanel from '../../components/LeftSidePanel';
 import InfoPanel from '../../components/InfoPanel';
 import "./index.css"
+import { io } from "socket.io-client";
+const socket = io("http://server-domain.com");
 const Home = ({ location: { pathname } }) => {
   if (pathname !== '/') {
     return null;
