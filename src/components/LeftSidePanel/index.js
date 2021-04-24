@@ -16,7 +16,7 @@ function LeftSidePanel(props) {
               onClick={() => setVisible(true)}
               >Добавить сайт</Button>
             }
-            style = {{width: "30%", height: "100%", align: 'center',}}
+            style = {{width: "30%", align: 'center', boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}
             bordered
             dataSource={DataUrls}
             renderItem={item => (
