@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';                                          //Рабочий код, делаем из него автоматический подгрузчик.
 import {List, Button} from 'antd';
-import DataUrls from '../../DataUrls.json'
+import DataUrls from '../../../DataUrls.json'
 
 function LeftSidePanel(props) {  
 
