@@ -74,6 +74,10 @@ module.exports = (env, argv) => {
     config.resolve.alias['react-dom'] = '@hot-loader/react-dom';
     config.plugins.push(new webpack.HotModuleReplacementPlugin());
     config.devServer = {
+      allowedHosts: [
+        '192.168.1.1',
+        '192.168.1.202'
+      ],
       compress: true,
       hot: true,
       contentBase: './build',
