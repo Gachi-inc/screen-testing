@@ -3,16 +3,20 @@ import PropTypes from 'prop-types';
 import PageLayout from '../../layout/PageLayout';
 import SettingsPanel from '../../components/SettingsPanel';
 import LeftSidePanel from '../../components/LeftSidePanel';
+import InfoPanel from '../../components/InfoPanel';
 import "./index.css"
 const Home = ({ location: { pathname } }) => {
   if (pathname !== '/') {
     return null;
   }
   return (
-  <PageLayout>
+  <PageLayout title = "Home">
     <div className = "HomePage">
       <LeftSidePanel/>
-      <SettingsPanel/>
+      <div className = "Information">
+        <SettingsPanel/>
+        <InfoPanel/>
+      </div>
     </div>
   </PageLayout>
   )

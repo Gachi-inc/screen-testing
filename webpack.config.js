@@ -49,7 +49,15 @@ let config = {
           },
           {
             loader: 'less-loader',
-          },
+            options: {
+              lessOptions: {
+                modifyVars: {
+                  'primary-color': '#6CDA9F',
+                },
+                javascriptEnabled: true,
+              }
+            }
+          }
         ],
       },
       {

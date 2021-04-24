@@ -18,9 +18,9 @@ export default class MainLayout extends React.Component {
     const { children } = this.props;
     return (
       <Layout>
-        <Header>
+        <Header style= {{backgroundColor: "#6CDA9F"}}>
           <div className="logo">LOGO</div>
-          <Menu theme="dark" mode="horizontal">
+          <Menu theme="light" mode="horizontal">
             <Menu.Item key="1">
               <Avatar size={32} icon={<UserOutlined />} />
               UserName

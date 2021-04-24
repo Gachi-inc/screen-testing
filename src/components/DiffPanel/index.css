@@ -1,0 +1,6 @@
+.DiffPanel {
+    height: 100%;
+    width: 50%;
+    /* overflow-y: scroll; */
+    margin-left: 16px;
+}
