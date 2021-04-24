@@ -19,7 +19,7 @@ export default class MainLayout extends React.Component {
     return (
       <Layout>
         <Header style= {{backgroundColor: "#6CDA9F"}}>
-          <div className="logo">LOGO</div>
+          <div className="logo">🤖</div>
           <Menu theme="light" mode="horizontal">
             <Menu.Item key="1">
               <Avatar size={32} icon={<UserOutlined />} />
