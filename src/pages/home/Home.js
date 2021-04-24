@@ -9,7 +9,7 @@ const Home = ({ location: { pathname } }) => {
     return null;
   }
   return (
-  <PageLayout>
+  <PageLayout title = "Home">
     <div>
       <LeftSidePanel/>
       <SettingsPanel/>
