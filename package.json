@@ -1,24 +1,12 @@
 {
-  "name": "reactjs-boilerplate",
+  "name": "screen-testing-app",
   "version": "2.0.2",
   "description": "",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Nikhil-Kumaran/reactjs-boilerplate/"
+    "url": ""
   },
-  "homepage": "https://reactjs-boilerplate.netlify.com/",
-  "keywords": [
-    "react-boilerplate",
-    "reactjs-boilerplate",
-    "create-react-app",
-    "CRA",
-    "reactjs-setup",
-    "reactjs",
-    "webpack",
-    "babel"
-  ],
-  "author": "Nikhil Kumaran S",
   "license": "ISC",
   "engines": {
     "node": ">=10.16.0"
