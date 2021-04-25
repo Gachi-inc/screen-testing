@@ -9,3 +9,14 @@
     height: 100%;
     width: 75%;
 }
+
+.lazy-loading {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #fff;
+    opacity: 0.4;
+  }
+  

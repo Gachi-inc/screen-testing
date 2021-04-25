@@ -20,27 +20,11 @@ function LeftSidePanel(props) {
     console.log(props)
       return (
         <div className ='LeftSidePanel'>
-          {/* <List
-            header={<div>Имя</div>}
-            footer={
-              <Button type="dashed"
-              style={{ width: '100%' }}
-              onClick={() => setVisible(true)}
-              >Добавить <PlusCircleOutlined/></Button>
-            }//onSelect={props.setId(item.id)}
-            style = {{height:"100%",align: 'center', boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"}}
-            bordered
-            dataSource={props.rootStore.sites}
-            renderItem={item => (
-              <List.Item key={item.id} onClick = {(e) => console.log(e.target.value)}>
-               <Space> {item.title} </Space> <Space> {item.url} </Space>
-              </List.Item>
-            )}
-          /> */}
-           <Button type="dashed"
+           {/* <Button type="dashed"
               style={{ width: '100%' }}
               onClick={() => socket.send({data: "ready2"})}
-              >emit <PlusCircleOutlined/></Button>
+              >emit <PlusCircleOutlined/></Button> */}
+          <h1>Объекты для тестирования</h1>
           <Menu
             onClick = {(e) => props.setCurrentId(e.key)}
             mode="inline"

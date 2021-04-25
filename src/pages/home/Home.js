@@ -1,17 +1,20 @@
-import React from 'react';
+import React, {Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import PageLayout from '../../layout/PageLayout';
-import SettingsPanel from '../../components/SettingsPanel';
+// import SettingsPanel from '../../components/SettingsPanel';
 import LeftSidePanel from '../../components/LeftSidePanel';
-import InfoPanel from '../../components/InfoPanel';
+// import InfoPanel from '../../components/InfoPanel';
 import "./index.css"
 import socket from '../../core/socketio';
 import {observer, inject} from "mobx-react"
+import { Spin } from 'antd';
 
 socket.on("connect", (arg) => {
   console.log(arg); // yor computer is virused
 });
 
+const SettingsPanel = lazy(() => import('../../components/SettingsPanel'));
+const InfoPanel = lazy(() => import('../../components/InfoPanel'));
 
 // import { io } from "socket.io-client";
 // const socket = io("http://server-domain.com");
@@ -41,8 +44,10 @@ class Home extends React.Component {
       <div className = "HomePage">
         <LeftSidePanel rootStore = {rootStore} setCurrentId = {this.setId}/>
         <div className = "Information">
-          <SettingsPanel site = {rootStore.sites.find(site => site.id === id)}/>
-          <InfoPanel rootStore = {rootStore} id = {this.state.id}/>
+          <Suspense fallback={<div className="lazy-loading">loading...</div>}>
+            <SettingsPanel site = {rootStore.sites.find(site => site.id === id)}/>
+            <InfoPanel rootStore = {rootStore} id = {this.state.id}/>
+          </Suspense>
         </div>
       </div>
     </PageLayout>

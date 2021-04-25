@@ -4,3 +4,7 @@
     padding: 16px;
     background-color: #fff;
 }
+
+.SettingsPanel span {
+    font-style: italic;
+}
